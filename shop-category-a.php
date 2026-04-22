@@ -1,0 +1,110 @@
+<?php
+$pageKey = 'shop-category-a';
+$pageTitle = 'Shop Category A | Daily Wellness and Relief';
+$pageDescription = 'Explore Category A on Zovita: multivitamins, immunity support, pain relief, digestive care, and sleep support.';
+$breadcrumbs = [
+    ['label' => 'Home', 'url' => 'index.php'],
+    ['label' => 'Shop category A']
+];
+require __DIR__ . '/includes/bootstrap.php';
+require_once __DIR__ . '/includes/products-data.php';
+
+$catalog = zvGetCategoryCatalog();
+$category = $catalog['a'];
+$products = zvGetProductsByCategory('a');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<?php require __DIR__ . '/includes/head.php'; ?>
+
+<body class="zv-shell" data-page="shop-category-a">
+    <?php require __DIR__ . '/includes/navbar.php'; ?>
+    <?php require __DIR__ . '/includes/breadcrumbs.php'; ?>
+
+    <main class="zv-section-lg pb-12">
+        <div class="zv-container px-2 sm:px-3">
+            <section class="zv-hero p-6 sm:p-8 lg:p-10">
+                <span class="zv-chip"><?php echo htmlspecialchars($category['badge'], ENT_QUOTES, 'UTF-8'); ?></span>
+                <h1 class="zv-page-title"><?php echo htmlspecialchars($category['title'], ENT_QUOTES, 'UTF-8'); ?></h1>
+                <p class="zv-page-lead"><?php echo htmlspecialchars($category['description'], ENT_QUOTES, 'UTF-8'); ?></p>
+            </section>
+
+            <section class="zv-section-lg zv-panel p-5 sm:p-6" data-shop-catalog>
+                <div class="zv-shop-head">
+                    <h2 class="text-2xl font-bold">Premium Catalog</h2>
+                    <p class="text-sm font-semibold text-navy-800" data-product-count></p>
+                </div>
+
+                <div class="zv-shop-filter-grid mt-4">
+                    <label>
+                        <span class="zv-label">Search product</span>
+                        <input type="search" class="zv-input" data-filter-query placeholder="Search by product name">
+                    </label>
+                    <label>
+                        <span class="zv-label">Type</span>
+                        <select class="zv-input" data-filter-type>
+                            <option value="all">All types</option>
+                            <option value="product">Product</option>
+                            <option value="medicine">Medicine</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span class="zv-label">Section</span>
+                        <select class="zv-input" data-filter-section>
+                            <option value="all">All sections</option>
+                            <?php foreach ($category['sections'] as $section): ?>
+                                <option value="<?php echo htmlspecialchars($section['id'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($section['label'], ENT_QUOTES, 'UTF-8'); ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </label>
+                    <label>
+                        <span class="zv-label">Sort by</span>
+                        <select class="zv-input" data-filter-sort>
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="zv-product-grid mt-5" data-product-grid>
+                    <?php foreach ($products as $product): ?>
+                        <article
+                            class="zv-product-card zv-product-card-premium"
+                            data-product-card
+                            data-name="<?php echo htmlspecialchars(strtolower($product['name']), ENT_QUOTES, 'UTF-8'); ?>"
+                            data-type="<?php echo htmlspecialchars(strtolower($product['type']), ENT_QUOTES, 'UTF-8'); ?>"
+                            data-section="<?php echo htmlspecialchars(strtolower($product['section']), ENT_QUOTES, 'UTF-8'); ?>"
+                            data-price="<?php echo (int)$product['price']; ?>">
+                            <a href="<?php echo htmlspecialchars($product['url'], ENT_QUOTES, 'UTF-8'); ?>" class="zv-product-link">
+                                <div class="zv-product-image-wrap">
+                                    <img src="<?php echo htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8'); ?>">
+                                </div>
+                                <div class="zv-product-meta">
+                                    <small><?php echo htmlspecialchars($product['sectionLabel'], ENT_QUOTES, 'UTF-8'); ?></small>
+                                    <strong><?php echo htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8'); ?></strong>
+                                    <p class="zv-product-price"><?php echo htmlspecialchars($product['priceLabel'], ENT_QUOTES, 'UTF-8'); ?></p>
+                                </div>
+                            </a>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+
+                <p class="zv-empty-state" data-empty-state>No products matched your selected filters.</p>
+            </section>
+
+            <section class="zv-section">
+                <div class="zv-panel p-5 sm:p-6">
+                    <h3 class="text-xl font-bold">Need a Specific Product?</h3>
+                    <p class="mt-2 text-sm text-slate-600">Use sorting and section filters to quickly locate the right medicine or wellness item in this category.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <?php require __DIR__ . '/includes/footer.php'; ?>
+    <?php require __DIR__ . '/includes/scripts.php'; ?>
+</body>
+
+</html>
