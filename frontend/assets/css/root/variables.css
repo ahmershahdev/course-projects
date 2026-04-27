@@ -41,8 +41,8 @@
   --zv-radius-xl: 1.45rem;
   --zv-radius-pill: 999px;
 
-  --zv-inline-gap: clamp(0.35rem, 1vw, 0.9rem);
-  --zv-site-max: 1820px;
+  --zv-inline-gap: clamp(0.8rem, 2vw, 1.65rem);
+  --zv-site-max: 1480px;
   --zv-content-max: 1160px;
 
   --zv-transition-fast: 0.2s ease;

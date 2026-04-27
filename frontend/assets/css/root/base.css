@@ -72,7 +72,7 @@ img {
 .zv-shell {
   position: relative;
   min-height: 100vh;
-  overflow-x: clip;
+  overflow-x: hidden;
   background:
     radial-gradient(
       circle at 10% 8%,
@@ -305,6 +305,26 @@ img {
   50% {
     transform: translate3d(1.6%, -1.4%, 0) scale(1.04);
     opacity: 0.48;
+  }
+}
+
+@media (max-width: 1536px) {
+  .zv-shell::before {
+    background-size: 92px 92px;
+    mask-image: none;
+    opacity: 0.46;
+  }
+
+  .zv-shell::after {
+    inset: -10% -5%;
+    opacity: 0.24;
+    animation: none;
+  }
+
+  .zv-float,
+  .zv-pulse,
+  .zv-shimmer::after {
+    animation: none;
   }
 }
 

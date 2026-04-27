@@ -4,9 +4,19 @@ window.Zovita.scrollTop = (function () {
   function initButton() {
     var button = document.querySelector("[data-scroll-top]");
     var ticking = false;
+    var isVisible = false;
 
     if (!button) {
       return;
+    }
+
+    function applyVisibility(shouldShow) {
+      if (shouldShow === isVisible) {
+        return;
+      }
+
+      button.classList.toggle("visible", shouldShow);
+      isVisible = shouldShow;
     }
 
     function onScroll() {
@@ -18,14 +28,14 @@ window.Zovita.scrollTop = (function () {
 
       window.requestAnimationFrame(function () {
         var shouldShow = window.scrollY > 320;
-        button.classList.toggle("visible", shouldShow);
+        applyVisibility(shouldShow);
         ticking = false;
       });
     }
 
     function updateState() {
       var shouldShow = window.scrollY > 320;
-      button.classList.toggle("visible", shouldShow);
+      applyVisibility(shouldShow);
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });

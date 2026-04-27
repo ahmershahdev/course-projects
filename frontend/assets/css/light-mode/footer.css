@@ -19,6 +19,12 @@
   backdrop-filter: blur(6px);
 }
 
+@media (max-width: 1536px) {
+  .zv-footer {
+    backdrop-filter: none;
+  }
+}
+
 .zv-footer-grid {
   display: grid;
   gap: 1.1rem;

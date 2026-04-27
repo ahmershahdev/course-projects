@@ -19,6 +19,13 @@
   box-shadow: 0 12px 30px rgba(14, 41, 90, 0.08);
 }
 
+@media (max-width: 1536px) {
+  .zv-navbar {
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
+
 .zv-brand {
   display: inline-flex;
   align-items: center;
@@ -373,6 +380,12 @@ body.zv-offcanvas-open .zv-offcanvas-overlay {
 
 @media (max-width: 1320px) {
   .zv-icon-label {
+    display: none;
+  }
+}
+
+@media (max-width: 1360px) {
+  .zv-nav-actions > .zv-quick-menu {
     display: none;
   }
 }
