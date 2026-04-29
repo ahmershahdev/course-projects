@@ -29,6 +29,10 @@ $isShopCategoryPage = in_array($pageKey, ['shop-category-a', 'shop-category-b', 
     <script src="frontend/assets/js/pages/contact.js"></script>
 <?php endif; ?>
 
+<?php if ($pageKey === 'products'): ?>
+    <script src="frontend/assets/js/pages/product.js"></script>
+<?php endif; ?>
+
 <?php if ($isAuthPage): ?>
     <script src="frontend/assets/js/auth/forms.js"></script>
 <?php endif; ?>

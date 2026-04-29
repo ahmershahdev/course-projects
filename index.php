@@ -25,10 +25,21 @@ $featuredProducts = array_slice(zvGetAllProducts(), 0, 15);
         <section class="zv-section-lg">
             <div class="zv-container px-2 sm:px-3">
                 <div class="grid gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-                    <div class="zv-hero p-6 sm:p-8">
+                    <div class="zv-hero zv-hero-premium p-6 sm:p-8">
                         <span class="zv-chip">Premium care experience</span>
                         <h1 class="zv-page-title">Your trusted healthcare store, <span class="zv-gradient-text">designed for confident choices</span>.</h1>
                         <p class="zv-page-lead">Discover medicines, supplements, oral care, skincare, and condition-based health products through a modern shopping journey built for speed and trust.</p>
+                        <ul class="zv-hero-list">
+                            <li><span>01</span>
+                                <div>Verified sourcing and partner pharmacies that keep product quality consistent.</div>
+                            </li>
+                            <li><span>02</span>
+                                <div>Fast category filters and section-led discovery for clear decisions.</div>
+                            </li>
+                            <li><span>03</span>
+                                <div>Secure checkout, real-time order tracking, and responsive support.</div>
+                            </li>
+                        </ul>
                         <div class="mt-6 flex flex-wrap gap-3">
                             <a href="shop-category-a.php" class="zv-btn-primary">Explore products</a>
                             <a href="order-tracking.php" class="zv-btn-secondary">Track your order</a>
@@ -61,6 +72,30 @@ $featuredProducts = array_slice(zvGetAllProducts(), 0, 15);
                             <div class="absolute bottom-4 right-4 rounded-lg bg-navy-900 px-3 py-2 text-xs font-semibold text-white shadow zv-pulse">Secure checkout and protected account flow</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="zv-section-lg">
+            <div class="zv-container px-2 sm:px-3">
+                <div class="mb-5">
+                    <span class="zv-chip">Premium promise</span>
+                    <h2 class="mt-3 text-3xl font-bold">Shopping that feels guided and secure</h2>
+                    <p class="mt-2 text-sm text-slate-600">Every step is designed to make healthcare purchases faster, clearer, and more confident.</p>
+                </div>
+                <div class="zv-grid-cards cols-3">
+                    <article class="zv-glow-card">
+                        <h3 class="text-xl font-bold">Guided catalog</h3>
+                        <p class="mt-2 text-sm text-slate-600">Segmented categories, section tags, and filters keep every product easy to find.</p>
+                    </article>
+                    <article class="zv-glow-card">
+                        <h3 class="text-xl font-bold">Quality checks</h3>
+                        <p class="mt-2 text-sm text-slate-600">Verified suppliers, secure handling, and trusted brands maintain product integrity.</p>
+                    </article>
+                    <article class="zv-glow-card">
+                        <h3 class="text-xl font-bold">Priority support</h3>
+                        <p class="mt-2 text-sm text-slate-600">Order tracking, responsive support, and transparent policies keep you informed.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -165,6 +200,30 @@ $featuredProducts = array_slice(zvGetAllProducts(), 0, 15);
                         <h3 class="mt-3 text-2xl font-bold">Oral care and nutrition</h3>
                         <p class="mt-2 text-sm text-slate-600">Oral hygiene, lifestyle supplements, and maintenance essentials.</p>
                         <a href="shop-category-c.php" class="zv-btn-secondary mt-4">Explore category C</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="zv-section-lg">
+            <div class="zv-container px-2 sm:px-3">
+                <div class="mb-5">
+                    <span class="zv-chip">How it works</span>
+                    <h2 class="mt-3 text-3xl font-bold">From discovery to delivery in minutes</h2>
+                    <p class="mt-2 text-sm text-slate-600">A streamlined flow that keeps healthcare shopping clear, quick, and reliable.</p>
+                </div>
+                <div class="zv-grid-cards cols-3">
+                    <article class="zv-glow-card">
+                        <h3 class="text-xl font-bold">Discover</h3>
+                        <p class="mt-2 text-sm text-slate-600">Browse by category, section, or condition for focused product discovery.</p>
+                    </article>
+                    <article class="zv-glow-card">
+                        <h3 class="text-xl font-bold">Build your cart</h3>
+                        <p class="mt-2 text-sm text-slate-600">Add essentials, adjust quantities, and review pricing before checkout.</p>
+                    </article>
+                    <article class="zv-glow-card">
+                        <h3 class="text-xl font-bold">Track delivery</h3>
+                        <p class="mt-2 text-sm text-slate-600">Stay updated with order tracking and support-ready status checks.</p>
                     </article>
                 </div>
             </div>

@@ -6,6 +6,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--zv-navy-700) #d9e3f4;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -71,6 +72,8 @@ img {
 
 .zv-shell {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
   background:
@@ -85,6 +88,10 @@ img {
       rgba(12, 35, 81, 0) 33%
     ),
     var(--zv-gradient-soft);
+}
+
+.zv-shell > main {
+  flex: 1 0 auto;
 }
 
 .zv-shell::before {

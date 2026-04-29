@@ -21,7 +21,9 @@ zvEnsureSessionCartItems($defaultCartItems);
 
 $addSlug = zvSlugify($_GET['add'] ?? '');
 if ($addSlug !== '' && zvFindProductBySlug($addSlug) !== null) {
-    zvAddSessionCartItem($addSlug, 1);
+    $addQty = (int)($_GET['qty'] ?? 1);
+    $addQty = max(1, min($addQty, 25));
+    zvAddSessionCartItem($addSlug, $addQty);
     header('Location: cart.php');
     exit;
 }

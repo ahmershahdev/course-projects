@@ -132,29 +132,10 @@ $quickGridLinks = [
                 <a href="order-tracking.php" data-nav-link class="<?php echo zvActiveClass('order-tracking.php', $currentScript); ?>">Order Tracking</a>
                 <a href="wishlist.php" data-nav-link class="<?php echo zvActiveClass('wishlist.php', $currentScript); ?>">Wishlist</a>
                 <a href="cart.php" data-nav-link class="<?php echo zvActiveClass('cart.php', $currentScript); ?>">Cart</a>
-                <a href="faq.php" data-nav-link class="<?php echo zvActiveClass('faq.php', $currentScript); ?>">FAQ</a>
-                <a href="shipping-info.php" data-nav-link class="<?php echo zvActiveClass('shipping-info.php', $currentScript); ?>">Shipping info</a>
             </nav>
-
-            <div class="zv-offcanvas-quick">
-                <p class="zv-quick-title">Browse</p>
-                <div class="zv-quick-grid">
-                    <?php foreach ($quickGridLinks as $item): ?>
-                        <a href="<?php echo $item['url']; ?>" data-nav-link class="zv-quick-link<?php echo zvActiveClass($item['url'], $currentScript); ?>"><?php echo htmlspecialchars($item['label'], ENT_QUOTES, 'UTF-8'); ?></a>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-
-            <div class="mt-auto pt-3">
-                <div class="zv-panel p-3">
-                    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Contact us</p>
-                    <a class="mt-1 block text-sm font-bold text-navy-900" href="mailto:help@zovita.pk">help@zovita.pk</a>
-                    <a class="mt-1 block text-sm font-bold text-navy-900" href="tel:+923001234567">+92 300 1234567</a>
-                    <div class="mt-3 flex gap-2">
-                        <a href="login.php" class="zv-btn-secondary w-full">Login</a>
-                        <a href="signup.php" class="zv-btn-primary w-full">Join</a>
-                    </div>
-                </div>
+            <div class="mt-4 flex gap-2">
+                <a href="login.php" class="zv-btn-secondary w-full">Login</a>
+                <a href="signup.php" class="zv-btn-primary w-full">Join</a>
             </div>
         </div>
     </aside>

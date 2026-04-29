@@ -20,6 +20,18 @@ foreach ($products as $product) {
     }
     $sectionCounts[$sectionId] += 1;
 }
+
+$heroPoints = [
+    ['label' => '01', 'text' => 'Acne control, derma repair, and sun shield essentials in one flow.'],
+    ['label' => '02', 'text' => 'Filter by product type and section to build day and night routines.'],
+    ['label' => '03', 'text' => 'Keep skin support organized with clear care categories.'],
+];
+
+$sectionHighlights = [
+    'acne-control' => 'Targeted cleansers, gels, and treatments for blemish management.',
+    'derma-repair' => 'Barrier repair, tone correction, and hydration recovery essentials.',
+    'sun-shield' => 'Daily SPF protection and UV defense for outdoor exposure.',
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,11 +42,19 @@ foreach ($products as $product) {
     <?php require __DIR__ . '/includes/breadcrumbs.php'; ?>
 
     <main class="zv-section-lg pb-12">
-        <div class="zv-container px-2 sm:px-3">
-            <section class="zv-hero p-6 sm:p-8 lg:p-10">
+        <div class="zv-container px-1 sm:px-2">
+            <section class="zv-hero zv-hero-premium p-6 sm:p-8 lg:p-10">
                 <span class="zv-chip"><?php echo htmlspecialchars($category['badge'], ENT_QUOTES, 'UTF-8'); ?></span>
                 <h1 class="zv-page-title"><?php echo htmlspecialchars($category['title'], ENT_QUOTES, 'UTF-8'); ?></h1>
                 <p class="zv-page-lead"><?php echo htmlspecialchars($category['description'], ENT_QUOTES, 'UTF-8'); ?></p>
+                <ul class="zv-hero-list">
+                    <?php foreach ($heroPoints as $point): ?>
+                        <li>
+                            <span><?php echo htmlspecialchars($point['label'], ENT_QUOTES, 'UTF-8'); ?></span>
+                            <div><?php echo htmlspecialchars($point['text'], ENT_QUOTES, 'UTF-8'); ?></div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             </section>
 
             <section class="zv-section mt-5">
@@ -54,7 +74,30 @@ foreach ($products as $product) {
                 </div>
             </section>
 
-            <section class="zv-section-lg zv-panel p-5 sm:p-6 mt-5" data-shop-catalog>
+            <section class="zv-section-lg">
+                <div class="mb-4">
+                    <span class="zv-chip">Category highlights</span>
+                    <h2 class="mt-3 text-3xl font-bold">Skin routines with clarity and protection</h2>
+                    <p class="mt-2 text-sm text-slate-600">Focus on repair, protection, and treatment with section-led guidance.</p>
+                </div>
+                <div class="zv-grid-cards cols-3">
+                    <?php foreach ($category['sections'] as $section): ?>
+                        <?php $sectionId = $section['id']; ?>
+                        <article class="zv-glow-card">
+                            <span class="zv-chip"><?php echo htmlspecialchars($section['label'], ENT_QUOTES, 'UTF-8'); ?></span>
+                            <h3 class="mt-3 text-xl font-bold"><?php echo htmlspecialchars($section['label'], ENT_QUOTES, 'UTF-8'); ?> focus</h3>
+                            <p class="mt-2 text-sm text-slate-600">
+                                <?php echo htmlspecialchars($sectionHighlights[$sectionId] ?? 'Curated skin essentials with trustworthy picks.', ENT_QUOTES, 'UTF-8'); ?>
+                            </p>
+                            <p class="mt-3 text-sm font-semibold text-navy-800">
+                                <?php echo (int)($sectionCounts[$sectionId] ?? 0); ?> products ready
+                            </p>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+            </section>
+
+            <section class="zv-section-lg zv-catalog mt-5" data-shop-catalog>
                 <div class="zv-shop-head">
                     <h2 class="text-2xl font-bold">Category Catalog</h2>
                     <p class="text-sm font-semibold text-navy-800" data-product-count></p>
@@ -137,9 +180,9 @@ foreach ($products as $product) {
             </section>
 
             <section class="zv-section">
-                <div class="zv-panel p-5 sm:p-6">
-                    <h3 class="text-xl font-bold">Need a Specific Product?</h3>
-                    <p class="mt-2 text-sm text-slate-600">Use sorting and section filters to quickly locate the right medicine or wellness item in this category.</p>
+                <div class="zv-panel zv-hero-premium p-5 sm:p-6">
+                    <h3 class="text-xl font-bold">Need a specific product?</h3>
+                    <p class="mt-2 text-sm text-slate-600">Use the search bar and section filters to land on the right skin care item faster.</p>
                 </div>
             </section>
         </div>

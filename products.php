@@ -56,8 +56,19 @@ require __DIR__ . '/includes/bootstrap.php';
                         <h1 class="zv-page-title mt-4"><?php echo htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8'); ?></h1>
                         <p class="zv-page-lead"><?php echo htmlspecialchars($product['description'], ENT_QUOTES, 'UTF-8'); ?></p>
                         <div class="mt-4 zv-product-price-lg"><?php echo htmlspecialchars($product['priceLabel'], ENT_QUOTES, 'UTF-8'); ?></div>
-                        <div class="mt-5 flex flex-wrap gap-3">
-                            <a href="cart.php?add=<?php echo rawurlencode($product['slug']); ?>" class="zv-btn-primary">Add to cart</a>
+                        <div class="mt-5 zv-product-actions">
+                            <div class="zv-qty-control zv-qty-control-lg" data-product-qty>
+                                <button type="button" data-qty-decrease aria-label="Decrease quantity">-</button>
+                                <span data-qty-value>1</span>
+                                <button type="button" data-qty-increase aria-label="Increase quantity">+</button>
+                            </div>
+                            <a
+                                href="cart.php?add=<?php echo rawurlencode($product['slug']); ?>&qty=1"
+                                data-add-to-cart
+                                data-base-url="cart.php?add=<?php echo rawurlencode($product['slug']); ?>"
+                                class="zv-btn-primary">
+                                Add to cart
+                            </a>
                             <a href="wishlist.php?add=<?php echo rawurlencode($product['slug']); ?>" class="zv-btn-secondary">Save to wishlist</a>
                         </div>
                         <div class="mt-5 grid gap-3 sm:grid-cols-2">

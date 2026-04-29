@@ -131,3 +131,9 @@
     max-height: 280px;
   }
 }
+
+@media (max-width: 640px) {
+  .zv-search-input {
+    font-size: 1rem;
+  }
+}

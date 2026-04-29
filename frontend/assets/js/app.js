@@ -82,6 +82,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (
+    pageKey === "products" &&
+    Zovita.product &&
+    typeof Zovita.product.init === "function"
+  ) {
+    Zovita.product.init();
+  }
+
+  if (
     document.body.hasAttribute("data-auth-page") &&
     Zovita.authForms &&
     typeof Zovita.authForms.init === "function"
