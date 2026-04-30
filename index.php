@@ -60,16 +60,19 @@ $featuredProducts = array_slice(zvGetAllProducts(), 0, 15);
                         </div>
                     </div>
 
-                    <div class="zv-panel p-3 sm:p-4">
-                        <div class="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-2">
+                    <div class="zv-panel zv-hero-premium p-3 sm:p-4">
+                        <div class="zv-hero-carousel" data-hero-carousel>
                             <img
                                 data-hero-rotator
                                 data-images="frontend/assets/images/main_page_images/hero.png, frontend/assets/images/main_page_images/1.webp, frontend/assets/images/main_page_images/2.webp, frontend/assets/images/main_page_images/3.webp, frontend/assets/images/main_page_images/4.webp, frontend/assets/images/main_page_images/5.webp, frontend/assets/images/main_page_images/6.webp"
                                 src="frontend/assets/images/main_page_images/hero.png"
                                 alt="Zovita hero products"
-                                class="h-[330px] w-full rounded-lg object-cover transition-opacity duration-300 sm:h-[400px]">
-                            <div class="absolute left-4 top-4 rounded-lg bg-white/95 px-3 py-2 text-xs font-semibold text-navy-900 shadow">Smart category-based discovery</div>
-                            <div class="absolute bottom-4 right-4 rounded-lg bg-navy-900 px-3 py-2 text-xs font-semibold text-white shadow zv-pulse">Secure checkout and protected account flow</div>
+                                class="zv-hero-image transition-opacity duration-300">
+                            <div class="zv-hero-controls">
+                                <button type="button" class="zv-hero-control" data-hero-prev aria-label="Previous slide">Prev</button>
+                                <button type="button" class="zv-hero-control" data-hero-toggle aria-pressed="true">Pause</button>
+                                <button type="button" class="zv-hero-control" data-hero-next aria-label="Next slide">Next</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -110,48 +113,87 @@ $featuredProducts = array_slice(zvGetAllProducts(), 0, 15);
                     <a href="shop-category-b.php" class="zv-btn-secondary">Browse condition-focused products</a>
                 </div>
 
-                <div class="zv-care-grid">
-                    <a href="shop-category-b.php#acne-control" class="zv-care-item">
-                        <img src="frontend/assets/images/care_by_condition/acne.png" alt="Acne care">
-                        <p>Acne care</p>
-                    </a>
-                    <a href="shop-category-a.php#pain-relief" class="zv-care-item">
-                        <img src="frontend/assets/images/care_by_condition/bones%20%26%20joints%20pain.png" alt="Bones and joints pain care">
-                        <p>Bones and joints pain</p>
-                    </a>
-                    <a href="shop-category-a.php#daily-vitamins" class="zv-care-item">
-                        <img src="frontend/assets/images/care_by_condition/constipation.png" alt="Constipation care">
-                        <p>Constipation</p>
-                    </a>
-                    <a href="shop-category-a.php#immunity-support" class="zv-care-item">
-                        <img src="frontend/assets/images/care_by_condition/cough%20%26%20cold.png" alt="Cough and cold care">
-                        <p>Cough and cold</p>
-                    </a>
-                    <a href="shop-category-a.php#immunity-support" class="zv-care-item">
-                        <img src="frontend/assets/images/care_by_condition/fever%20relief.png" alt="Fever relief care">
-                        <p>Fever relief</p>
-                    </a>
-                    <a href="shop-category-c.php#nutrition-support" class="zv-care-item">
-                        <img src="frontend/assets/images/care_by_condition/hairfall.png" alt="Hairfall care">
-                        <p>Hairfall</p>
-                    </a>
-                    <a href="shop-category-a.php#pain-relief" class="zv-care-item">
-                        <img src="frontend/assets/images/care_by_condition/pain%20%26%20body%20aches.png" alt="Pain and body aches care">
-                        <p>Pain and body aches</p>
-                    </a>
-                    <a href="shop-category-a.php#daily-vitamins" class="zv-care-item">
-                        <img src="frontend/assets/images/care_by_condition/sleep%20disorders.png" alt="Sleep disorders care">
-                        <p>Sleep disorders</p>
-                    </a>
-                    <a href="shop-category-b.php#sun-shield" class="zv-care-item">
-                        <img src="frontend/assets/images/care_by_condition/sun%20protection.png" alt="Sun protection care">
-                        <p>Sun protection</p>
-                    </a>
+                <div class="zv-condition-marquee" aria-label="Care by condition">
+                    <div class="zv-condition-track">
+                        <a href="shop-category-b.php#acne-control" class="zv-care-item">
+                            <img src="frontend/assets/images/care_by_condition/acne.png" alt="Acne care">
+                            <p>Acne care</p>
+                        </a>
+                        <a href="shop-category-a.php#pain-relief" class="zv-care-item">
+                            <img src="frontend/assets/images/care_by_condition/bones%20%26%20joints%20pain.png" alt="Bones and joints pain care">
+                            <p>Bones and joints pain</p>
+                        </a>
+                        <a href="shop-category-a.php#daily-vitamins" class="zv-care-item">
+                            <img src="frontend/assets/images/care_by_condition/constipation.png" alt="Constipation care">
+                            <p>Constipation</p>
+                        </a>
+                        <a href="shop-category-a.php#immunity-support" class="zv-care-item">
+                            <img src="frontend/assets/images/care_by_condition/cough%20%26%20cold.png" alt="Cough and cold care">
+                            <p>Cough and cold</p>
+                        </a>
+                        <a href="shop-category-a.php#immunity-support" class="zv-care-item">
+                            <img src="frontend/assets/images/care_by_condition/fever%20relief.png" alt="Fever relief care">
+                            <p>Fever relief</p>
+                        </a>
+                        <a href="shop-category-c.php#nutrition-support" class="zv-care-item">
+                            <img src="frontend/assets/images/care_by_condition/hairfall.png" alt="Hairfall care">
+                            <p>Hairfall</p>
+                        </a>
+                        <a href="shop-category-a.php#pain-relief" class="zv-care-item">
+                            <img src="frontend/assets/images/care_by_condition/pain%20%26%20body%20aches.png" alt="Pain and body aches care">
+                            <p>Pain and body aches</p>
+                        </a>
+                        <a href="shop-category-a.php#daily-vitamins" class="zv-care-item">
+                            <img src="frontend/assets/images/care_by_condition/sleep%20disorders.png" alt="Sleep disorders care">
+                            <p>Sleep disorders</p>
+                        </a>
+                        <a href="shop-category-b.php#sun-shield" class="zv-care-item">
+                            <img src="frontend/assets/images/care_by_condition/sun%20protection.png" alt="Sun protection care">
+                            <p>Sun protection</p>
+                        </a>
+
+                        <a href="shop-category-b.php#acne-control" class="zv-care-item" aria-hidden="true">
+                            <img src="frontend/assets/images/care_by_condition/acne.png" alt="Acne care">
+                            <p>Acne care</p>
+                        </a>
+                        <a href="shop-category-a.php#pain-relief" class="zv-care-item" aria-hidden="true">
+                            <img src="frontend/assets/images/care_by_condition/bones%20%26%20joints%20pain.png" alt="Bones and joints pain care">
+                            <p>Bones and joints pain</p>
+                        </a>
+                        <a href="shop-category-a.php#daily-vitamins" class="zv-care-item" aria-hidden="true">
+                            <img src="frontend/assets/images/care_by_condition/constipation.png" alt="Constipation care">
+                            <p>Constipation</p>
+                        </a>
+                        <a href="shop-category-a.php#immunity-support" class="zv-care-item" aria-hidden="true">
+                            <img src="frontend/assets/images/care_by_condition/cough%20%26%20cold.png" alt="Cough and cold care">
+                            <p>Cough and cold</p>
+                        </a>
+                        <a href="shop-category-a.php#immunity-support" class="zv-care-item" aria-hidden="true">
+                            <img src="frontend/assets/images/care_by_condition/fever%20relief.png" alt="Fever relief care">
+                            <p>Fever relief</p>
+                        </a>
+                        <a href="shop-category-c.php#nutrition-support" class="zv-care-item" aria-hidden="true">
+                            <img src="frontend/assets/images/care_by_condition/hairfall.png" alt="Hairfall care">
+                            <p>Hairfall</p>
+                        </a>
+                        <a href="shop-category-a.php#pain-relief" class="zv-care-item" aria-hidden="true">
+                            <img src="frontend/assets/images/care_by_condition/pain%20%26%20body%20aches.png" alt="Pain and body aches care">
+                            <p>Pain and body aches</p>
+                        </a>
+                        <a href="shop-category-a.php#daily-vitamins" class="zv-care-item" aria-hidden="true">
+                            <img src="frontend/assets/images/care_by_condition/sleep%20disorders.png" alt="Sleep disorders care">
+                            <p>Sleep disorders</p>
+                        </a>
+                        <a href="shop-category-b.php#sun-shield" class="zv-care-item" aria-hidden="true">
+                            <img src="frontend/assets/images/care_by_condition/sun%20protection.png" alt="Sun protection care">
+                            <p>Sun protection</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="zv-section-lg">
+        <section class="zv-section-lg" id="featured-products">
             <div class="zv-container px-2 sm:px-3">
                 <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
                     <div>
@@ -229,7 +271,37 @@ $featuredProducts = array_slice(zvGetAllProducts(), 0, 15);
             </div>
         </section>
 
-        <section class="zv-section">
+        <section class="zv-section-lg" id="coming-soon">
+            <div class="zv-container px-2 sm:px-3">
+                <div class="zv-panel zv-hero-premium p-6 sm:p-8">
+                    <span class="zv-chip">Coming soon</span>
+                    <h2 class="mt-3 text-3xl font-bold">We are coming soon on Android and iOS</h2>
+                    <p class="mt-2 text-sm text-slate-600">Get ready for a mobile-first experience with faster ordering, saved routines, and instant tracking.</p>
+                    <div class="mt-5 zv-grid-cards cols-2">
+                        <div class="zv-app-card">
+                            <div class="flex items-center gap-3">
+                                <span class="zv-app-icon">A</span>
+                                <span class="zv-chip">Android</span>
+                            </div>
+                            <h3 class="text-xl font-bold">Zovita for Android</h3>
+                            <p class="text-sm text-slate-600">Personalized wellness shortcuts and reorder flows built for speed.</p>
+                            <span class="zv-app-status">Coming soon</span>
+                        </div>
+                        <div class="zv-app-card">
+                            <div class="flex items-center gap-3">
+                                <span class="zv-app-icon">iOS</span>
+                                <span class="zv-chip">iOS</span>
+                            </div>
+                            <h3 class="text-xl font-bold">Zovita for iPhone</h3>
+                            <p class="text-sm text-slate-600">A premium iOS experience with secure checkout and live tracking.</p>
+                            <span class="zv-app-status">Coming soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="zv-section" id="newsletter">
             <div class="zv-container px-2 sm:px-3">
                 <div class="zv-panel p-6 sm:p-8">
                     <div class="grid gap-5 lg:grid-cols-[1fr_0.92fr] lg:items-center">
@@ -246,6 +318,18 @@ $featuredProducts = array_slice(zvGetAllProducts(), 0, 15);
                         </form>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="zv-section">
+            <div class="zv-container px-2 sm:px-3">
+                <nav class="zv-pagination" aria-label="Pagination">
+                    <a class="zv-page-link is-disabled" href="#" aria-disabled="true">Prev</a>
+                    <a class="zv-page-link is-active" href="#">1</a>
+                    <a class="zv-page-link" href="#">2</a>
+                    <a class="zv-page-link" href="#">3</a>
+                    <a class="zv-page-link" href="#">Next</a>
+                </nav>
             </div>
         </section>
     </main>

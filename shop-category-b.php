@@ -185,6 +185,16 @@ $sectionHighlights = [
                     <p class="mt-2 text-sm text-slate-600">Use the search bar and section filters to land on the right skin care item faster.</p>
                 </div>
             </section>
+
+            <section class="zv-section">
+                <nav class="zv-pagination" aria-label="Pagination">
+                    <a class="zv-page-link is-disabled" href="#" aria-disabled="true">Prev</a>
+                    <a class="zv-page-link is-active" href="#">1</a>
+                    <a class="zv-page-link" href="#">2</a>
+                    <a class="zv-page-link" href="#">3</a>
+                    <a class="zv-page-link" href="#">Next</a>
+                </nav>
+            </section>
         </div>
     </main>
 

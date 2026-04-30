@@ -14,6 +14,10 @@ if ($product === null) {
     exit;
 }
 
+$stockSeed = abs((int)crc32($product['slug']));
+$stockCount = ($stockSeed % 42) + 8;
+$stockLabel = $stockCount < 12 ? 'Limited stock' : 'Available';
+
 $catalog = zvGetCategoryCatalog();
 $category = $catalog[$product['categoryKey']];
 $relatedProducts = array_values(array_filter(
@@ -71,7 +75,7 @@ require __DIR__ . '/includes/bootstrap.php';
                             </a>
                             <a href="wishlist.php?add=<?php echo rawurlencode($product['slug']); ?>" class="zv-btn-secondary">Save to wishlist</a>
                         </div>
-                        <div class="mt-5 grid gap-3 sm:grid-cols-2">
+                        <div class="mt-5 grid gap-3 sm:grid-cols-3">
                             <div class="zv-product-detail-stat">
                                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Type</p>
                                 <p class="mt-1 text-sm font-bold text-navy-900"><?php echo htmlspecialchars($product['type'], ENT_QUOTES, 'UTF-8'); ?></p>
@@ -79,6 +83,11 @@ require __DIR__ . '/includes/bootstrap.php';
                             <div class="zv-product-detail-stat">
                                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Section</p>
                                 <p class="mt-1 text-sm font-bold text-navy-900"><?php echo htmlspecialchars($product['sectionLabel'], ENT_QUOTES, 'UTF-8'); ?></p>
+                            </div>
+                            <div class="zv-product-detail-stat">
+                                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Stock</p>
+                                <p class="mt-1 text-sm font-bold text-navy-900"><?php echo htmlspecialchars($stockLabel, ENT_QUOTES, 'UTF-8'); ?></p>
+                                <p class="mt-1 text-xs text-slate-600"><?php echo (int)$stockCount; ?> units</p>
                             </div>
                         </div>
                     </div>

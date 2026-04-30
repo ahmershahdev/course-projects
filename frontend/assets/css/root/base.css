@@ -74,6 +74,7 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
+  isolation: isolate;
   min-height: 100vh;
   overflow-x: hidden;
   background:
@@ -96,7 +97,7 @@ img {
 
 .zv-shell::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
   background-image:
@@ -105,12 +106,13 @@ img {
   background-size: 62px 62px;
   mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
   opacity: 0.8;
+  z-index: 0;
 }
 
 .zv-shell::after {
   content: "";
-  position: absolute;
-  inset: -24% -12%;
+  position: fixed;
+  inset: 0;
   pointer-events: none;
   background:
     radial-gradient(
@@ -124,6 +126,12 @@ img {
       rgba(17, 51, 112, 0) 44%
     );
   animation: zvShellToneShift 22s ease-in-out infinite;
+  z-index: 0;
+}
+
+.zv-shell > * {
+  position: relative;
+  z-index: 1;
 }
 
 .zv-container {

@@ -1,6 +1,6 @@
 <footer class="zv-footer">
-    <div class="zv-container px-2 py-6 sm:px-3">
-        <div class="zv-footer-grid border-b border-slate-200 pb-6">
+    <div class="zv-container px-2 py-2 sm:px-3">
+        <div class="zv-footer-grid border-b border-slate-200 pb-2">
             <div>
                 <a href="index.php" class="zv-brand">
                     <img src="frontend/assets/images/logo/logo.png" alt="Zovita logo" class="zv-brand-logo">
@@ -10,14 +10,27 @@
                     </span>
                 </a>
                 <p class="mt-4 max-w-sm text-sm text-slate-600">Zovita delivers a premium healthcare commerce experience across medicines, supplements, wellness essentials, and daily preventive care categories.</p>
-                <div class="zv-contact-card">
-                    <div class="zv-contact-row">
-                        <span>Email</span>
-                        <a href="mailto:help@zovita.pk">help@zovita.pk</a>
+                <div class="zv-footer-meta">
+                    <div class="zv-footer-slab">
+                        <p class="zv-footer-title">Contact</p>
+                        <div class="zv-footer-contact-list">
+                            <div class="zv-footer-contact-row">
+                                <span>Email</span>
+                                <a href="mailto:help@zovita.pk">help@zovita.pk</a>
+                            </div>
+                            <div class="zv-footer-contact-row">
+                                <span>Phone</span>
+                                <a href="tel:+923001234567">+92 300 1234567</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="zv-contact-row">
-                        <span>Phone</span>
-                        <a href="tel:+923001234567">+92 300 1234567</a>
+                    <div class="zv-footer-slab">
+                        <p class="zv-footer-title">Connect</p>
+                        <div class="zv-footer-links zv-footer-links-inline">
+                            <a class="zv-footer-link" href="https://github.com/ahmershahdev" target="_blank" rel="noopener">GitHub</a>
+                            <a class="zv-footer-link" href="https://www.linkedin.com/in/syedahmershah" target="_blank" rel="noopener">LinkedIn</a>
+                            <a class="zv-footer-link" href="https://ahmershah.dev" target="_blank" rel="noopener">Website</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,6 +40,7 @@
                 <div class="zv-footer-links">
                     <a class="zv-footer-link" href="about.php">About us</a>
                     <a class="zv-footer-link" href="contact.php">Contact us</a>
+                    <a class="zv-footer-link" href="blog.php">Blog</a>
                     <a class="zv-footer-link" href="faq.php">FAQ</a>
                     <a class="zv-footer-link" href="account.php">Account</a>
                 </div>

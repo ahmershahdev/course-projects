@@ -3,6 +3,16 @@ window.Zovita = window.Zovita || {};
 window.Zovita.home = (function () {
   function initHeroRotator() {
     var image = document.querySelector("[data-hero-rotator]");
+    var carousel = document.querySelector("[data-hero-carousel]");
+    var prevButton = carousel
+      ? carousel.querySelector("[data-hero-prev]")
+      : null;
+    var nextButton = carousel
+      ? carousel.querySelector("[data-hero-next]")
+      : null;
+    var toggleButton = carousel
+      ? carousel.querySelector("[data-hero-toggle]")
+      : null;
     var timerId = null;
 
     if (!image) {
@@ -20,18 +30,24 @@ window.Zovita.home = (function () {
       return;
     }
 
-    if (
+    var prefersReduced =
       window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
-    }
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     var index = 0;
     var intervalMs = 4200;
 
-    function rotateImage() {
-      index = (index + 1) % images.length;
+    function renderToggleState(isPlaying) {
+      if (!toggleButton) {
+        return;
+      }
+
+      toggleButton.textContent = isPlaying ? "Pause" : "Play";
+      toggleButton.setAttribute("aria-pressed", String(isPlaying));
+    }
+
+    function showImage(nextIndex) {
+      index = (nextIndex + images.length) % images.length;
       image.classList.add("opacity-0");
 
       window.setTimeout(function () {
@@ -40,12 +56,17 @@ window.Zovita.home = (function () {
       }, 220);
     }
 
+    function rotateImage() {
+      showImage(index + 1);
+    }
+
     function startRotator() {
-      if (timerId || document.visibilityState === "hidden") {
+      if (prefersReduced || timerId || document.visibilityState === "hidden") {
         return;
       }
 
       timerId = window.setInterval(rotateImage, intervalMs);
+      renderToggleState(true);
     }
 
     function stopRotator() {
@@ -55,6 +76,7 @@ window.Zovita.home = (function () {
 
       window.clearInterval(timerId);
       timerId = null;
+      renderToggleState(false);
     }
 
     document.addEventListener("visibilitychange", function () {
@@ -65,6 +87,33 @@ window.Zovita.home = (function () {
 
       startRotator();
     });
+
+    if (prevButton) {
+      prevButton.addEventListener("click", function () {
+        showImage(index - 1);
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", function () {
+        showImage(index + 1);
+      });
+    }
+
+    if (toggleButton) {
+      toggleButton.addEventListener("click", function () {
+        if (timerId) {
+          stopRotator();
+        } else {
+          startRotator();
+        }
+      });
+    }
+
+    if (prefersReduced) {
+      renderToggleState(false);
+      return;
+    }
 
     startRotator();
   }

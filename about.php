@@ -113,6 +113,28 @@ require __DIR__ . '/includes/bootstrap.php';
                     </article>
                 </div>
             </section>
+
+            <section class="zv-section-lg">
+                <div class="zv-panel zv-hero-premium p-6 sm:p-8">
+                    <span class="zv-chip">Coming soon</span>
+                    <h2 class="mt-3 text-3xl font-bold">We are coming soon on Android and iOS</h2>
+                    <p class="mt-2 text-sm text-slate-600">Our mobile apps will deliver faster ordering, saved routines, and instant tracking on the go.</p>
+                    <div class="mt-5 zv-grid-cards cols-2">
+                        <div class="zv-app-card">
+                            <span class="zv-chip">Android</span>
+                            <h3 class="text-xl font-bold">Zovita for Android</h3>
+                            <p class="text-sm text-slate-600">A streamlined catalog with quick reorders and saved care plans.</p>
+                            <span class="zv-app-status">Coming soon</span>
+                        </div>
+                        <div class="zv-app-card">
+                            <span class="zv-chip">iOS</span>
+                            <h3 class="text-xl font-bold">Zovita for iPhone</h3>
+                            <p class="text-sm text-slate-600">Premium iOS design with secure checkout and real-time updates.</p>
+                            <span class="zv-app-status">Coming soon</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 

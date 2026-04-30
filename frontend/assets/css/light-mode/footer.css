@@ -17,6 +17,11 @@
       rgba(242, 247, 255, 0.95)
     );
   backdrop-filter: blur(6px);
+  padding-bottom: 0;
+}
+
+.zv-footer .zv-container {
+  padding-bottom: 0.25rem;
 }
 
 @media (max-width: 1536px) {
@@ -43,6 +48,57 @@
   margin-top: 0.75rem;
   display: grid;
   gap: 0.4rem;
+}
+
+.zv-footer-links-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.zv-footer-meta {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.zv-footer-slab {
+  border-radius: 0.95rem;
+  border: 1px solid #d6e2f5;
+  background: linear-gradient(150deg, #ffffff, #edf4ff);
+  padding: 0.75rem;
+  box-shadow: 0 12px 26px rgba(14, 42, 95, 0.08);
+}
+
+.zv-footer-contact-list {
+  margin-top: 0.6rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.zv-footer-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.7rem;
+  border: 1px dashed rgba(18, 50, 109, 0.16);
+  background: rgba(243, 248, 255, 0.9);
+}
+
+.zv-footer-contact-row span {
+  color: var(--zv-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.zv-footer-contact-row a {
+  color: var(--zv-navy-900);
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .zv-footer-link {
@@ -92,11 +148,22 @@
 }
 
 .zv-footer-copy {
-  margin-top: 0.85rem;
+  margin-top: 0.45rem;
+  padding-bottom: 0.2rem;
   text-align: center;
   color: var(--zv-navy-900);
   font-size: 0.86rem;
   font-weight: 700;
+}
+
+.zv-footer-copy p {
+  margin: 0;
+}
+
+@media (min-width: 860px) {
+  .zv-footer-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1024px) {

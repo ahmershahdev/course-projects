@@ -19,20 +19,37 @@ $primaryNav = [
     ['label' => 'Daily Wellness', 'url' => 'shop-category-a.php'],
     ['label' => 'Skin & Derma', 'url' => 'shop-category-b.php'],
     ['label' => 'Oral & Nutrition', 'url' => 'shop-category-c.php'],
+    ['label' => 'Blog', 'url' => 'blog.php'],
     ['label' => 'About Us', 'url' => 'about.php'],
     ['label' => 'Contact', 'url' => 'contact.php']
 ];
 
 $quickGridLinks = [
-    ['label' => 'Home', 'url' => 'index.php'],
-    ['label' => 'Daily Wellness', 'url' => 'shop-category-a.php'],
-    ['label' => 'Skin & Derma', 'url' => 'shop-category-b.php'],
-    ['label' => 'Oral & Nutrition', 'url' => 'shop-category-c.php'],
-    ['label' => 'About Us', 'url' => 'about.php'],
-    ['label' => 'Contact', 'url' => 'contact.php'],
-    ['label' => 'Order Tracking', 'url' => 'order-tracking.php'],
-    ['label' => 'Privacy Policy', 'url' => 'privacy-policy.php'],
-    ['label' => 'Terms of Service', 'url' => 'terms-of-service.php']
+    ['label' => 'Home', 'url' => 'index.php', 'detail' => 'Storefront overview'],
+    ['label' => 'Daily Wellness', 'url' => 'shop-category-a.php', 'detail' => 'Vitamins and relief'],
+    ['label' => 'Skin & Derma', 'url' => 'shop-category-b.php', 'detail' => 'Acne and repair'],
+    ['label' => 'Oral & Nutrition', 'url' => 'shop-category-c.php', 'detail' => 'Oral and supplements'],
+    ['label' => 'Blog', 'url' => 'blog.php', 'detail' => 'Engineering insights'],
+    ['label' => 'About Us', 'url' => 'about.php', 'detail' => 'Mission and values'],
+    ['label' => 'Contact', 'url' => 'contact.php', 'detail' => 'Support and care'],
+    ['label' => 'Order Tracking', 'url' => 'order-tracking.php', 'detail' => 'Track shipment'],
+    ['label' => 'Wishlist', 'url' => 'wishlist.php', 'detail' => 'Saved items'],
+    ['label' => 'Cart', 'url' => 'cart.php', 'detail' => 'Checkout ready'],
+    ['label' => 'Account', 'url' => 'account.php', 'detail' => 'Profile hub'],
+    ['label' => 'Login', 'url' => 'login.php', 'detail' => 'Sign in'],
+    ['label' => 'Create account', 'url' => 'signup.php', 'detail' => 'Join Zovita'],
+    ['label' => 'FAQ', 'url' => 'faq.php', 'detail' => 'Common questions'],
+    ['label' => 'Shipping Info', 'url' => 'shipping-info.php', 'detail' => 'Delivery timeline'],
+    ['label' => 'Returns & Refunds', 'url' => 'returns.php', 'detail' => 'Easy returns'],
+    ['label' => 'Warranty Policy', 'url' => 'warranty.php', 'detail' => 'Coverage info'],
+    ['label' => 'Privacy Policy', 'url' => 'privacy-policy.php', 'detail' => 'Data handling'],
+    ['label' => 'Terms of Service', 'url' => 'terms-of-service.php', 'detail' => 'Usage terms'],
+    ['label' => 'Care by Condition', 'url' => 'index.php#care-by-condition', 'detail' => 'Symptom focus'],
+    ['label' => 'Featured Products', 'url' => 'index.php#featured-products', 'detail' => 'Top picks'],
+    ['label' => 'Newsletter', 'url' => 'index.php#newsletter', 'detail' => 'Updates and tips'],
+    ['label' => 'Shop Category A', 'url' => 'shop-category-a.php', 'detail' => 'Daily wellness'],
+    ['label' => 'Shop Category B', 'url' => 'shop-category-b.php', 'detail' => 'Derma care'],
+    ['label' => 'Shop Category C', 'url' => 'shop-category-c.php', 'detail' => 'Oral and nutrition']
 ];
 ?>
 
@@ -63,12 +80,15 @@ $quickGridLinks = [
 
             <div class="zv-nav-actions">
                 <div class="zv-quick-menu" data-quick-menu>
-                    <button type="button" class="zv-btn-secondary zv-quick-toggle" data-quick-toggle aria-expanded="false">Quick Menu</button>
+                    <button type="button" class="zv-btn-secondary zv-quick-toggle" data-quick-toggle aria-expanded="false">Menu</button>
                     <div class="zv-quick-dropdown" data-quick-dropdown>
-                        <p class="zv-quick-title">Browse</p>
+                        <p class="zv-quick-title">Menu</p>
                         <div class="zv-quick-grid">
                             <?php foreach ($quickGridLinks as $item): ?>
-                                <a href="<?php echo $item['url']; ?>" data-nav-link class="zv-quick-link<?php echo zvActiveClass($item['url'], $currentScript); ?>"><?php echo htmlspecialchars($item['label'], ENT_QUOTES, 'UTF-8'); ?></a>
+                                <a href="<?php echo $item['url']; ?>" data-nav-link class="zv-quick-link<?php echo zvActiveClass($item['url'], $currentScript); ?>">
+                                    <span class="zv-quick-label"><?php echo htmlspecialchars($item['label'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                    <span class="zv-quick-meta"><?php echo htmlspecialchars($item['detail'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                </a>
                             <?php endforeach; ?>
                         </div>
                     </div>
